@@ -1,0 +1,25 @@
+.snb {
+    overflow: hidden;
+    margin-top: 30px;
+    padding-left: 10px;
+    border-bottom: 2px solid #cc2323;
+    li {
+        float: left;
+    }
+    a {
+        display: inline-block;
+        margin-right: 1px;
+        padding: 12px 15px 10px;
+        background: #eaeaea;
+        font-size: 13px;
+        color: #444;
+        &:hover {
+            background: #f13f3f;
+            color: #fff;
+        }
+    }
+    .on a {
+        background: #cc2323;
+        color: #fff;
+    }
+}
