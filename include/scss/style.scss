@@ -1,3 +1,120 @@
 @import "variables";
+@import "reset";
+@import "mixins/mixins";
+@import "component/component";
 
-@import "core";
+
+/*******************************
+    Scaffolding
+*******************************/
+body {
+    background-color: $body-bg;
+    font: 400 13px 'Noto Sans KR', sans-serif;
+}
+a,
+a:hover {
+    color: $text-color;
+    text-decoration: none;
+}
+img,
+.image img {
+    width: 100%;
+}
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+/*******************************
+    Helper Class
+*******************************/
+.clearfix {
+    @include clearfix;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.pull-right {
+    float: right;
+}
+.pull-left {
+    float: left;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+
+/*******************************
+    Contents
+*******************************/
+.title {
+    margin: 0 0 10px 5px;
+    font: 600 18px 'Noto Sans KR', sans-serif;
+    color: #444;
+    letter-spacing: -1px;
+}
+.portfolio-list {
+    > li {
+        position: relative;
+        margin-top: 10px;
+        vertical-align: top;
+        a {
+            display: block;
+            padding: 15px 10px;
+            border-radius: 10px;
+            background: #eaeaea;
+            box-sizing: border-box;
+            &:hover {
+                padding: 10px 5px;
+                border: 5px solid #f13f3f;
+                background: #fff;
+            }
+        }
+        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            &:nth-child(odd) {
+                clear: left;
+            }
+        }
+        @media (min-width: $screen-md-min) {
+            &:nth-child(3n+1) {
+                clear: left;
+            }
+        }
+    }
+}
+.thumbnail {
+    display: block;
+}
+.info-list {
+    margin: 10px 0 0 5px;
+    li {
+        padding: 1px 0;
+        line-height: 18px;
+        color: #444;
+        &.work_con {
+            margin-left: 64px;
+            text-indent: -64px;
+        }
+        &:before {
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            margin: 0 5px 3px 0;
+            background: #777;
+            content: '';
+        }
+    }
+}

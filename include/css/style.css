@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,6 +22,9 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -52,11 +56,14 @@ table {
   border-spacing: 0;
 }
 
+/*******************************
+    Typography
+*******************************/
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .container:before, .container:after {
   content: " ";
@@ -67,25 +74,25 @@ table {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 950px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1150px;
   }
 }
 
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .container-fluid:before, .container-fluid:after {
   content: " ";
@@ -96,8 +103,8 @@ table {
 }
 
 .row {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -5px;
+  margin-right: -5px;
 }
 .row:before, .row:after {
   content: " ";
@@ -110,8 +117,8 @@ table {
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
@@ -956,12 +963,14 @@ header {
   border-bottom: 4px solid #cc2323;
 }
 header h1 {
-  margin: 0 0 -14px -4px;
+  margin: 0 0 -16px -4px;
+  font-weight: 700;
   font-size: 50px;
   color: #fff;
 }
 header h1 span {
   margin-left: 2px;
+  font-weight: 400;
   font-size: 23px;
   /*color:#fff;*/
   color: #cc2323;
@@ -973,16 +982,15 @@ header h1 span {
   }
 }
 
-.snb {
+.tab {
   overflow: hidden;
   margin-top: 30px;
-  padding-left: 10px;
   border-bottom: 2px solid #cc2323;
 }
-.snb li {
+.tab li {
   float: left;
 }
-.snb a {
+.tab a {
   display: inline-block;
   margin-right: 1px;
   padding: 12px 15px 10px;
@@ -990,11 +998,137 @@ header h1 span {
   font-size: 13px;
   color: #444;
 }
-.snb a:hover {
+.tab a:hover {
   background: #f13f3f;
   color: #fff;
 }
-.snb .on a {
+.tab .on a {
   background: #cc2323;
   color: #fff;
+}
+
+/*******************************
+    Scaffolding
+*******************************/
+body {
+  background-color: #fff;
+  font: 400 13px 'Noto Sans KR', sans-serif;
+}
+
+a,
+a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+
+img,
+.image img {
+  width: 100%;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/*******************************
+    Helper Class
+*******************************/
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/*******************************
+    Contents
+*******************************/
+.title {
+  margin: 0 0 10px 5px;
+  font: 600 18px 'Noto Sans KR', sans-serif;
+  color: #444;
+  letter-spacing: -1px;
+}
+
+.portfolio-list > li {
+  position: relative;
+  margin-top: 10px;
+  vertical-align: top;
+}
+.portfolio-list > li a {
+  display: block;
+  padding: 15px 10px;
+  border-radius: 10px;
+  background: #eaeaea;
+  box-sizing: border-box;
+}
+.portfolio-list > li a:hover {
+  padding: 10px 5px;
+  border: 5px solid #f13f3f;
+  background: #fff;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .portfolio-list > li:nth-child(odd) {
+    clear: left;
+  }
+}
+@media (min-width: 992px) {
+  .portfolio-list > li:nth-child(3n+1) {
+    clear: left;
+  }
+}
+
+.thumbnail {
+  display: block;
+}
+
+.info-list {
+  margin: 10px 0 0 5px;
+}
+.info-list li {
+  padding: 1px 0;
+  line-height: 18px;
+  color: #444;
+}
+.info-list li.work_con {
+  margin-left: 64px;
+  text-indent: -64px;
+}
+.info-list li:before {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin: 0 5px 3px 0;
+  background: #777;
+  content: '';
 }
